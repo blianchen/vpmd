@@ -369,6 +369,7 @@ typedef struct {
 
   ffid_t ffid;
   uint64_t vpmdid;
+//  char hostname[128];
 
 } EpmdVars;
 

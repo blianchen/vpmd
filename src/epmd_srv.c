@@ -696,6 +696,8 @@ static void do_request(g, fd, s, buf, bsize)
 					offset += 2;
 					memcpy(wbuf + offset, node->extra, node->extralen);
 					offset += node->extralen;
+					put_uint64(node->nodeid, wbuf + offset);
+					offset += 8;
 					if (reply(g, fd, wbuf, offset) != offset) {
 						dbg_tty_printf(g, 1, "** failed to send PORT2_RESP (ok) for \"%s\"", name);
 						return;

@@ -188,6 +188,8 @@ int main(int argc, char** argv)
 	g->ffid = ffid_create(256);
 	ffid_getid(g->ffid);	//skip id 0
 	g->vpmdid = vpmd_uid(g);
+//	g->hostname[127] = '\0';
+//	gethostname(g->hostname, 127); //sys/param.h, MAXHOSTNAMELEN=64
 
 	for (i = 0; i < MAX_LISTEN_SOCKETS; i++)
 		g->listenfd[i] = -1;
