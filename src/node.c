@@ -61,7 +61,7 @@ uint64_t vpmd_uid(EpmdVars *g) {
 			continue;
 		}
 		// mac, 1 byte
-		rv = rv | ifq[i].ifr_hwaddr.sa_data[5];
+		rv = rv | (unsigned char)ifq[i].ifr_hwaddr.sa_data[5];
 //		rv = ( ((rv | ifq[i].ifr_hwaddr.sa_data[4]) << 8) | ifq[i].ifr_hwaddr.sa_data[5] ) << 16;
 //		printf ("%X:%X:%X:%X:%X:%X \n", (unsigned char) ifq[i].ifr_hwaddr.sa_data[0], (unsigned char) ifq[i].ifr_hwaddr.sa_data[1], (unsigned char) ifq[i].ifr_hwaddr.sa_data[2], (unsigned char) ifq[i].ifr_hwaddr.sa_data[3], (unsigned char) ifq[i].ifr_hwaddr.sa_data[4], (unsigned char) ifq[i].ifr_hwaddr.sa_data[5]);
 
